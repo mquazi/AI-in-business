@@ -82,9 +82,49 @@ th,td{
 .bottom-right {font-size:2.33em; color: #afcee0; line-height: 1.5em; width: auto; height: 100px; padding: 0px 27px 27px 0px; text-align: right; position: absolute; bottom: 0px; right: 0px; text-shadow: 0px 0px 6px #000000;}
 
 /* Conference Title Logo */
-.title1{color: #b2132e; text-shadow: 1px 1px 3px #c0c0c0;  font-size: 20px;} 
-.title2{color: #52739e; text-shadow: 1px 1px 3px #c0c0c0;  font-size: 24px;}
-.year{color: #505050; font-size:0.67em; font-weight: lighter;}
+/* --- Font size variables for conference title --- */
+:root {
+    --title1-size: 4vw;   /* scales with viewport width */
+    --title2-size: 3vw;
+    --year-size: 2vw;
+}
+
+/* Conference Title Logo */
+.title1 {
+    color: #b2132e;
+    text-shadow: 1px 1px 3px #c0c0c0;
+    font-size: var(--title1-size);
+}
+
+.title2 {
+    color: #52739e;
+    text-shadow: 1px 1px 3px #c0c0c0;
+    font-size: var(--title2-size);
+}
+
+.year {
+    color: #505050;
+    font-size: var(--year-size);
+    font-weight: lighter;
+}
+
+/* Optional: min/max sizes for small/large screens */
+@media (max-width: 768px) {
+    :root {
+        --title1-size: 24px;
+        --title2-size: 20px;
+        --year-size: 16px;
+    }
+}
+
+@media (min-width: 1400px) {
+    :root {
+        --title1-size: 60px;
+        --title2-size: 48px;
+        --year-size: 32px;
+    }
+}
+
 
 /* Navigation Links (Home, Registration, etc) */
 table.navigation{width:800px;}
