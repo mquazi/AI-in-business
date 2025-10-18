@@ -1,2 +1,2 @@
-Symposium webpage for AAAI Spring Sympoisum 2026 on AI in Business
+Symposium webpage for AAAI Summer Symposium 2026 on AI in Business
 
