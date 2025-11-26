@@ -139,7 +139,7 @@ th,td{
 }
 
 .banner img {
-    width: 80%;   /* adjust this value (e.g., 70%, 60%) */
+    width: 60%;   /* adjust this value (e.g., 70%, 60%) */
     height: auto; /* keeps aspect ratio */
     display: block;
     margin: 0 auto; /* centers the image */
