@@ -77,15 +77,79 @@ th,td{
 }
 
 /* Website Banner */
-.banner {position: relative; font-family:'Roboto Slab',serif;}
-.top-left {font-size:5.33em; color: #505050; background: #afcee0; text-align: center; width: 1000px; height: 67px; position: absolute; padding: 36px 0 0 0; top: 0px;}
-.bottom-right {font-size:2.33em; color: #afcee0; line-height: 1.5em; width: auto; height: 100px; padding: 0px 27px 27px 0px; text-align: right; position: absolute; bottom: 0px; right: 0px; text-shadow: 0px 0px 6px #000000;}
+.banner {
+    font-family: 'Roboto Slab', serif;
+}
+
+.top-header {
+    background: #afcee0;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.title-line {
+    font-size: 3em;
+    color: #505050;
+    margin-bottom: 10px;
+}
+
+.subtitle-line {
+    font-size: 1.7em;
+    color: #505050;
+    margin-top: 20px;   /* Increase spacing between line 1 and 2 */
+}
+
+.image-row {
+    display: flex;
+    justify-content: center;   /* center the two images */
+    gap: 20px;                 /* space between images */
+    margin: 40px 0;            /* spacing above and below */
+}
+
+.img-left {
+    max-width: 500px;
+    height: 80px;
+}
+
+.img-right {
+    max-width: 320px;
+    height: 80px;
+}
+
+.top-left {
+    font-size: 3em;
+    color: #505050;
+    background: #afcee0;
+    text-align: center;
+    width: 100%;
+    padding: 20px 0;
+    position: relative;   /* no absolute */
+    height: auto;         /* remove fixed height */
+}
+
+.bottom-right {
+    font-size: 2em;
+    color: #505050;
+    text-align: right;
+    padding: 15px 10px;
+    position: relative;   /* remove absolute */
+    width: 100%;
+    height: auto;
+    text-shadow: none;    /* optional: remove shadow since it's not over the image */
+}
+
+.banner img {
+    width: 80%;   /* adjust this value (e.g., 70%, 60%) */
+    height: auto; /* keeps aspect ratio */
+    display: block;
+    margin: 0 auto; /* centers the image */
+}
 
 /* Conference Title Logo */
 /* --- Font size variables for conference title --- */
 :root {
-    --title1-size: 70px;   /* scales with viewport width */
-    --title2-size: 60px;
+    --title1-size: 50px;   /* scales with viewport width */
+    --title2-size: 50px;
     --year-size: 60px;
 }
 
@@ -143,6 +207,7 @@ table.organizers {
     text-align: center; /* centers default table cell content */
 }
 
+
 td.organizer {
     padding: 20px;
     vertical-align: top;
@@ -150,14 +215,64 @@ td.organizer {
 }
 
 td.organizer img {
-    width: 180px;      /* adjust size */
-    height: 180px;     /* make square first */
-    object-fit: cover; /* crop if needed */
-    border-radius: 50%; /* makes circle */
-    border: 4px solid #afcee0; /* optional border */
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #afcee0;
     box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
     display: block;
-    margin: 0 auto; /* centers image itself */
+    margin: 0 auto;
+    transition: transform 0.3s ease;  /* smooth zoom */
+}
+
+td.organizer a:hover img {
+    transform: scale(1.05);  /* zoom in 5% on hover */
+}
+
+.img-container {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: 0 auto;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #afcee0;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+.img-container:hover img {
+    transform: scale(1.05); /* zoom on hover */
+}
+
+.img-container .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent overlay */
+    color: #fff;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
+}
+
+.img-container:hover .overlay {
+    opacity: 1;
+    cursor: pointer;
 }
 
 td.organizer .name {
